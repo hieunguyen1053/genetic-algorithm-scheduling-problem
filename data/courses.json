@@ -1,0 +1,514 @@
+[
+    {
+        "id": "502041",
+        "name": "Phương pháp tính",
+        "lecturers": [
+            {
+                "id": "bxthang",
+                "name": "Bùi Xuân Thắng"
+            }
+        ],
+        "num_classes": 4,
+        "is_practice": false
+    },
+    {
+        "id": "502041-TH",
+        "name": "Thực hành Phương pháp tính",
+        "lecturers": [
+            {
+                "id": "vhanh",
+                "name": "Võ Hoàng Anh"
+            }
+        ],
+        "num_classes": 4,
+        "is_practice": true
+    },
+    {
+        "id": "502042",
+        "name": "Toán tổ hợp và đồ thị",
+        "lecturers": [
+            {
+                "id": "bdhuong",
+                "name": "Bùi Danh Hường"
+            },
+            {
+                "id": "nktung",
+                "name": "Nguyễn Khánh Tùng"
+            },
+            {
+                "id": "nqbinh",
+                "name": "Nguyễn Quốc Bình"
+            },
+            {
+                "id": "bxthang",
+                "name": "Bùi Xuân Thắng"
+            }
+        ],
+        "num_classes": 10,
+        "is_practice": false
+    },
+    {
+        "id": "502042-TH",
+        "name": "Thực hành Toán tổ hợp và đồ thị",
+        "lecturers": [
+            {
+                "id": "thtai",
+                "name": "Trần Hồng Tài"
+            },
+            {
+                "id": "ncthien",
+                "name": "Nguyễn Chí Thiện"
+            },
+            {
+                "id": "nqbinh",
+                "name": "Nguyễn Quốc Bình"
+            }
+        ],
+        "num_classes": 20,
+        "is_practice": true
+    },
+    {
+        "id": "502043",
+        "name": "Cấu trúc dữ liệu và giải thuật 2",
+        "lecturers": [
+            {
+                "id": "thlpdan",
+                "name": "Trần Hồ Lệ Phương Đan"
+            },
+            {
+                "id": "nqbinh",
+                "name": "Nguyễn Quốc Bình"
+            },
+            {
+                "id": "bthung",
+                "name": "Bùi Thanh Hùng"
+            },
+            {
+                "id": "ttphuoc",
+                "name": "Trần Thanh Phước"
+            }
+        ],
+        "num_classes": 5,
+        "is_practice": false
+    },
+    {
+        "id": "502043-TH",
+        "name": "Thực hành Cấu trúc dữ liệu và giải thuật 2",
+        "lecturers": [
+            {
+                "id": "thlpdan",
+                "name": "Trần Hồ Lệ Phương Đan"
+            },
+            {
+                "id": "nqbinh",
+                "name": "Nguyễn Quốc Bình"
+            },
+            {
+                "id": "ncthien",
+                "name": "Nguyễn Chí Thiện"
+            },
+            {
+                "id": "lacuong",
+                "name": "Lê Anh Cường"
+            }
+        ],
+        "num_classes": 10,
+        "is_practice": true
+    },
+    {
+        "id": "502044",
+        "name": "Tổ chức máy tính",
+        "lecturers": [
+            {
+                "id": "vpthoai",
+                "name": "Võ Phú Thoại"
+            }
+        ],
+        "num_classes": 1,
+        "is_practice": false
+    },
+    {
+        "id": "502044-TH",
+        "name": "Thực hành Tổ chức máy tính",
+        "lecturers": [
+            {
+                "id": "vpthoai",
+                "name": "Võ Phú Thoại"
+            }
+        ],
+        "num_classes": 2,
+        "is_practice": true
+    },
+    {
+        "id": "502045",
+        "name": "Công nghệ phần mềm",
+        "lecturers": [
+            {
+                "id": "ttphuoc",
+                "name": "Trần Thanh Phước"
+            },
+            {
+                "id": "dmthang",
+                "name": "Đặng Minh Thắng"
+            }
+        ],
+        "num_classes": 3,
+        "is_practice": false
+    },
+    {
+        "id": "502045-TH",
+        "name": "Thực hành Công nghệ phần mềm",
+        "lecturers": [
+            {
+                "id": "dmthang",
+                "name": "Đặng Minh Thắng"
+            }
+        ],
+        "num_classes": 6,
+        "is_practice": true
+    },
+    {
+        "id": "502049",
+        "name": "Nhập môn Bảo mật thông tin",
+        "lecturers": [
+            {
+                "id": "nntu",
+                "name": "Nguyễn Ngọc Tự"
+            },
+            {
+                "id": "hntu",
+                "name": "Huỳnh Ngọc Tú"
+            }
+        ],
+        "num_classes": 3,
+        "is_practice": false
+    },
+    {
+        "id": "502050",
+        "name": "Phân tích và thiết kế yêu cầu",
+        "lecturers": [
+            {
+                "id": "dttvan",
+                "name": "Dương Thị Thùy Vân"
+            },
+            {
+                "id": "nnphien",
+                "name": "Nguyễn Ngọc Phiên"
+            },
+            {
+                "id": "ptktrung",
+                "name": "Phạm Thái Kỳ Trung"
+            }
+        ],
+        "num_classes": 10,
+        "is_practice": false
+    },
+    {
+        "id": "502051",
+        "name": "Hệ cơ sở dữ liệu",
+        "lecturers": [
+            {
+                "id": "lmntrieu",
+                "name": "Lê Minh Nhựt Triều"
+            },
+            {
+                "id": "hntu",
+                "name": "Huỳnh Ngọc Tú"
+            },
+            {
+                "id": "hkhue",
+                "name": "Hoàng Khuê"
+            },
+            {
+                "id": "nthuu",
+                "name": "Nguyễn Thế Hữu"
+            },
+            {
+                "id": "ttbvan",
+                "name": "Trần Thị Bích Vân"
+            }
+        ],
+        "num_classes": 10,
+        "is_practice": false
+    },
+    {
+        "id": "502051-TH",
+        "name": "Thực hành Hệ cơ sở dữ liệu",
+        "lecturers": [
+            {
+                "id": "lmntrieu",
+                "name": "Lê Minh Nhựt Triều"
+            },
+            {
+                "id": "hntu",
+                "name": "Huỳnh Ngọc Tú"
+            },
+            {
+                "id": "hkhue",
+                "name": "Hoàng Khuê"
+            },
+            {
+                "id": "nthuu",
+                "name": "Nguyễn Thế Hữu"
+            },
+            {
+                "id": "ttbvan",
+                "name": "Trần Thị Bích Vân"
+            },
+            {
+                "id": "mvmanh",
+                "name": "Mai Văn Mạnh"
+            },
+            {
+                "id": "ttphuoc",
+                "name": "Trần Thanh Phước"
+            }
+        ],
+        "num_classes": 20,
+        "is_practice": true
+    },
+    {
+        "id": "503005",
+        "name": "Lập trình hướng đối tượng",
+        "lecturers": [
+            {
+                "id": "lacuong",
+                "name": "Lê Anh Cường"
+            },
+            {
+                "id": "thcuong",
+                "name": "Trịnh Hùng Cường"
+            },
+            {
+                "id": "ttphuoc",
+                "name": "Trần Thanh Phước"
+            },
+            {
+                "id": "bnath",
+                "name": "Bhagawan Nath"
+            },
+            {
+                "id": "bthung",
+                "name": "Bùi Thanh Hùng"
+            },
+            {
+                "id": "vtthanh",
+                "name": "Văn Thế Thành"
+            },
+            {
+                "id": "ntdang",
+                "name": "Nguyễn Tuấn Đăng"
+            }
+        ],
+        "num_classes": 10,
+        "is_practice": false
+    },
+    {
+        "id": "503005-TH",
+        "name": "Thực hành Lập trình hướng đối tượng",
+        "lecturers": [
+            {
+                "id": "ddtrung",
+                "name": "Đặng Đức Trung"
+            },
+            {
+                "id": "lacuong",
+                "name": "Lê Anh Cường"
+            },
+            {
+                "id": "dhphuc",
+                "name": "Dương Hữu Phúc"
+            },
+            {
+                "id": "thcuong",
+                "name": "Trịnh Hùng Cường"
+            },
+            {
+                "id": "thlpdan",
+                "name": "Trần Hồ Lệ Phương Đan"
+            },
+            {
+                "id": "dcquang",
+                "name": "Dung Cẩm Quang"
+            },
+            {
+                "id": "ttphuoc",
+                "name": "Trần Thanh Phước"
+            },
+            {
+                "id": "mvmanh",
+                "name": "Mai Văn Mạnh"
+            },
+            {
+                "id": "bnath",
+                "name": "Bhagawan Nath"
+            }
+        ],
+        "num_classes": 20,
+        "is_practice": true
+    },
+    {
+        "id": "502061",
+        "name": "Xác suất và thống kê ứng dụng cho Công nghệ thông tin",
+        "lecturers": [
+            {
+                "id": "cxphuong",
+                "name": "Cao Xuân Phương"
+            },
+            {
+                "id": "hnphuoc",
+                "name": "Huỳnh Ngọc Phước"
+            }
+        ],
+        "num_classes": 4,
+        "is_practice": false
+    },
+    {
+        "id": "502061-TH",
+        "name": "Thực hành Xác suất và thống kê ứng dụng cho Công nghệ thông tin",
+        "lecturers": [
+            {
+                "id": "tlqdai",
+                "name": "Trần Lương Quốc Đại"
+            },
+            {
+                "id": "nthtram",
+                "name": "Nguyễn Thị Huỳnh Trâm"
+            }
+        ],
+        "num_classes": 8,
+        "is_practice": true
+    },
+    {
+        "id": "503043",
+        "name": "Nhập môn Trí tuệ nhân tạo",
+        "lecturers": [
+            {
+                "id": "lacuong",
+                "name": "Lê Anh Cường"
+            }
+        ],
+        "num_classes": 1,
+        "is_practice": false
+    },
+    {
+        "id": "503044",
+        "name": "Nhập môn Học máy",
+        "lecturers": [
+            {
+                "id": "lacuong",
+                "name": "Lê Anh Cường"
+            }
+        ],
+        "num_classes": 1,
+        "is_practice": false
+    },
+    {
+        "id": "503073",
+        "name": "Lập trình web và ứng dụng",
+        "lecturers": [
+            {
+                "id": "pvhuy",
+                "name": "Phạm Văn Huy"
+            },
+            {
+                "id": "mvmanh",
+                "name": "Mai Văn Mạnh"
+            },
+            {
+                "id": "vdhong",
+                "name": "Vũ Đình Hồng"
+            },
+            {
+                "id": "dmthang",
+                "name": "Đặng Minh Thắng"
+            }
+        ],
+        "num_classes": 8,
+        "is_practice": false
+    },
+    {
+        "id": "503073-TH",
+        "name": "Thực hành Lập trình web và ứng dụng",
+        "lecturers": [
+            {
+                "id": "bnath",
+                "name": "Bhagawan Nath"
+            },
+            {
+                "id": "mvmanh",
+                "name": "Mai Văn Mạnh"
+            },
+            {
+                "id": "ntduy",
+                "name": "Nguyễn Thái Duy"
+            },
+            {
+                "id": "htdung",
+                "name": "Hà Thanh Dũng"
+            },
+            {
+                "id": "vdhong",
+                "name": "Vũ Đình Hồng"
+            },
+            {
+                "id": "pvhuy",
+                "name": "Phạm Văn Huy"
+            }
+        ],
+        "num_classes": 16,
+        "is_practice": true
+    },
+    {
+        "id": "502047",
+        "name": "Nhập môn hệ điều hành",
+        "lecturers": [
+            {
+                "id": "dtnhut",
+                "name": "Đỗ Trí Nhựt"
+            },
+            {
+                "id": "tttin",
+                "name": "Trần Trung Tín"
+            },
+            {
+                "id": "bnath",
+                "name": "Bhagawan Nath"
+            }
+        ],
+        "num_classes": 10,
+        "is_practice": false
+    },
+    {
+        "id": "502047-TH",
+        "name": "Nhập môn hệ điều hành",
+        "lecturers": [
+            {
+                "id": "dtnhut",
+                "name": "Đỗ Trí Nhựt"
+            },
+            {
+                "id": "tttin",
+                "name": "Trần Trung Tín"
+            },
+            {
+                "id": "bnath",
+                "name": "Bhagawan Nath"
+            },
+            {
+                "id": "pnhphuong",
+                "name": "Phạm Nguyễn Huy Phương"
+            },
+            {
+                "id": "lmhuan",
+                "name": "Lương Minh Huấn"
+            },
+            {
+                "id": "nvlgiang",
+                "name": "Nguyễn Võ Lam Giang"
+            }
+        ],
+        "num_classes": 20,
+        "is_practice": true
+    }
+]

@@ -1,0 +1,23 @@
+.Headerrow {
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #3B5998;
+    color: White;
+    font-weight: bold;
+}
+
+.cellbuoi {
+    text-align: center;
+    vertical-align: middle;
+    background-color: #3B5998;
+    color: White;
+    font-weight: bold;
+}
+
+.cell {
+    width: 150px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px;
+}
