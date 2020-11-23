@@ -1,75 +1,50 @@
 {% extends "base.html" %}
 
-{% block schedule%}
-<li class="nav-item">
-    <a class="nav-link" href="/">Thời khoá biểu</a>
-</li>
-{% endblock %}
-
 {% block content %}
-<link rel="stylesheet" href="{{url_for('static', filename='schedule.css')}}" />
-<div class="table-responsive">
-    <table id="ThoiKhoaBieu1_tbTKBTheoTuan" cellspacing="0" cellpadding="10" rules="all" border="1"
-        style="font-family:Tahoma;font-size:14px;width:100%;border-collapse:collapse;">
-        <tbody>
-            <tr class="Headerrow">
-                <td style="width:30px;">Tiết|Thứ</td>
-                <td>Thứ 2</td>
-                <td>Thứ 3</td>
-                <td>Thứ 4</td>
-                <td>Thứ 5</td>
-                <td>Thứ 6</td>
-                <td>Thứ 7</td>
-                <td>Chủ nhật</td>
-            </tr>
-            {% for row in rows %}
-            <tr class="rowContent">
-                <td class="cellbuoi">{{ loop.index }}</td>
-                {% for class in row %}
-                {% if class %}
-                <td class="cell" rowspan="3" style="color:White;background-color:{{ class.color }};">
-                    <table width="100%" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td><b>{{ class.course.name }}<br></b>
-                                    <br>{{ class.course.id }} | {{ class.lecturer.name }}
-                                    <br>Phòng: {{ class.room.name }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-                {% else %}
-                <td class="cell"></td>
-                {% endif %}
-                {% endfor %}
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
-    <table class="table table-striped table-sm">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Mã môn học</th>
-                <th>Tên môn học môn học</th>
-                <th>Giảng viên</th>
-                <th>Phòng</th>
-                <th>Thời gian</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for class in classes %}
-            <tr>
-                <td>{{ class.id }}</td>
-                <td>{{ class.course.id }}</td>
-                <td>{{ class.course.name }}</td>
-                <td>{{ class.lecturer.name }}</td>
-                <td>{{ class.room.name }}</td>
-                <td>{{ class.time }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<div>
+    Số lớp bị xung đột: {{ num_conflict }}
 </div>
+
+<button class="btn btn-primary process mb-5" type="button">
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    <span class="content">Process</span>
+</button>
+
+<table class="table table-striped table-sm">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Mã môn học</th>
+            <th>Tên môn học môn học</th>
+            <th>Giảng viên</th>
+            <th>Phòng</th>
+            <th>Thời gian</th>
+            <th>Xung đột</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for class in classes %}
+        <tr>
+            <td>{{ class.id }}</td>
+            <td>{{ class.course.id }}</td>
+            <td><a href="/schedule-table?course={{ class.course.id }}">{{ class.course.name }}</a></td>
+            <td><a href="/schedule-table?lecturer={{ class.lecturer.id }}">{{ class.lecturer.name }}</a></td>
+            <td><a href="/schedule-table?room={{ class.room.name }}">{{ class.room.name }}</a></td>
+            <td>{{ class.time }}</td>
+            <td>{% if class.conflict %}X{% endif %}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(() => {
+        $(".btn.process").click(async () => {
+            $(".btn.process .content").text("Loading...");
+            $(".btn.process .spinner-border").show();
+            const response = await fetch('/api/process', { method: 'GET' });
+            location.reload();
+        });
+    });
+</script>
 {% endblock %}

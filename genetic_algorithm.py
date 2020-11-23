@@ -64,7 +64,7 @@ class GeneticAlgorithm:
     """
 
     def __adaptive_population(self, population: Population) -> Population:
-        for i in range(self.NUM_OF_ELITE, self.POPULATION_SIZE):
+        for i in range(self.POPULATION_SIZE):
             self.__adaptive_chromosome(population.chromosomes[i])
         return population
 

@@ -13,7 +13,7 @@ class Lecturer:
         - name (str): Tên giảng viên
     """
     minimum = 2
-    maximum = 20
+    maximum = 10
 
     def __init__(self, id: str, name: str) -> None:
         self.id = id
@@ -245,14 +245,14 @@ class Class(Gene):
         5: "Thứ 7",
     }
 
-    def __init__(self, id: int, course: Course, lecturer: Optional[Lecturer] = None, room: Optional[Room] = None, day: Optional[int] = None, shift: Optional[Shift] = None):
+    def __init__(self, id: int, course: Course, lecturer: Optional[Lecturer] = None, room: Optional[Room] = None, day: Optional[int] = None, shift: Optional[Shift] = None, conflict: Optional[bool] = False):
         self.id = id
         self.course = course
         self.lecturer = lecturer
         self.room = room
         self.day = day
         self.shift = shift
-        self.conflict = False
+        self.conflict = conflict
 
     def __str__(self):
         return "<Class: {}, {}, {}, {}, {} {}>".format(self.id, self.course, self.lecturer, self.room, self.day, self.shift)
@@ -332,11 +332,9 @@ class Schedule(Chromosome):
                 new_class.shift = self.__shifts[random.randrange(
                     0, len(self.__shifts))]
                 if courses[i].is_practice:
-                    new_class.room = _rooms_practice[random.randrange(
-                        0, len(_rooms_practice))]
+                    new_class.room = _rooms_practice[random.randrange(0, len(_rooms_practice))]
                 else:
-                    new_class.room = _rooms_npractice[random.randrange(
-                        0, len(_rooms_npractice))]
+                    new_class.room = _rooms_npractice[random.randrange(0, len(_rooms_npractice))]
                 new_class.day = random.randrange(0, len(Class.DAYS))
                 new_class.lecturer = courses[i].lecturers[random.randrange(
                     0, len(courses[i].lecturers))]
@@ -360,6 +358,7 @@ class Schedule(Chromosome):
                         self.__num_conflicts += 1
                         classes[i].conflict = True
                     elif classes[i].lecturer.id == classes[j].lecturer.id:
+                        self.__num_conflicts += 1
                         classes[i].conflict = True
 
         loss = 0
@@ -406,7 +405,8 @@ class Schedule(Chromosome):
                 "shift": {
                     "id": clas.shift.id,
                     "time": clas.shift.time,
-                }
+                },
+                "conflict": clas.conflict,
             })
 
         for clas in self.classes:
@@ -431,7 +431,8 @@ class Schedule(Chromosome):
                     "shift": {
                         "id": clas.shift.id,
                         "time": clas.shift.time,
-                    }
+                    },
+                    "conflict": clas.conflict,
                 }]
             else:
                 courses[clas.course.name].append({
@@ -454,7 +455,8 @@ class Schedule(Chromosome):
                     "shift": {
                         "id": clas.shift.id,
                         "time": clas.shift.time,
-                    }
+                    },
+                    "conflict": clas.conflict,
                 })
 
             if clas.lecturer.name not in lecturers:
@@ -478,7 +480,8 @@ class Schedule(Chromosome):
                     "shift": {
                         "id": clas.shift.id,
                         "time": clas.shift.time,
-                    }
+                    },
+                    "conflict": clas.conflict,
                 }]
             else:
                 lecturers[clas.lecturer.name].append({
@@ -501,7 +504,8 @@ class Schedule(Chromosome):
                     "shift": {
                         "id": clas.shift.id,
                         "time": clas.shift.time,
-                    }
+                    },
+                    "conflict": clas.conflict,
                 })
 
             if clas.room.name not in rooms:
@@ -525,7 +529,8 @@ class Schedule(Chromosome):
                     "shift": {
                         "id": clas.shift.id,
                         "time": clas.shift.time,
-                    }
+                    },
+                    "conflict": clas.conflict,
                 }]
             else:
                 rooms[clas.room.name].append({
@@ -548,7 +553,8 @@ class Schedule(Chromosome):
                     "shift": {
                         "id": clas.shift.id,
                         "time": clas.shift.time,
-                    }
+                    },
+                    "conflict": clas.conflict,
                 })
         data = {
             "group_by_courses": courses,
@@ -590,6 +596,7 @@ class Schedule(Chromosome):
                     id=clas["shift"]["id"],
                     time=clas["shift"]["time"]
                 ),
+                conflict = clas["conflict"]
             ))
         return classes
 

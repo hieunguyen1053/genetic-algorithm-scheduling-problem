@@ -12,7 +12,7 @@
             {% for room in rooms %}
             <tr>
                 <td>{{ room.id }}</td>
-                <td><a href="/schedule?room={{ room.name }}">{{ room.name }}</a></td>
+                <td><a href="/schedule-table?room={{ room.name }}">{{ room.name }}</a></td>
             </tr>
             {% endfor %}
         </tbody>

@@ -32,6 +32,9 @@
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
+                            <a class="nav-link" href="/schedule">Thời khoá biểu</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/course">Môn học</a>
                         </li>
                         <li class="nav-item">
@@ -43,10 +46,6 @@
                         {% block schedule%}
                         {% endblock %}
                     </ul>
-                    <button class="btn btn-primary process" type="button">
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                        <span class="content">Process</span>
-                    </button>
                 </div>
             </nav>
 
@@ -61,14 +60,6 @@
                 $("a.nav-link.active").removeClass("active");
                 $(`a[href="${window.location.pathname}"]`).addClass("active");
             }()
-
-            $(".btn.process").click(async () => {
-                $(".btn.process .content").text("Loading...");
-                $(".btn.process .spinner-border").show();
-                const response = await fetch('/api/process', { method: 'GET' });
-                $(".btn.process .content").text("Process");
-                $(".btn.process .spinner-border").hide();
-            });
         });
 
     </script>

@@ -15,14 +15,18 @@
             {% for course in courses %}
             <tr>
                 <td>{{ course.id }}</td>
-                <td>{{ course.name }}</td>
+                <td>
+                    <a href="/schedule-table?course={{ course.id }}">
+                        {{ course.name }}
+                    </a>
+                </td>
                 <td>{{ course.num_classes }}</td>
                 <td>{{ course.is_practice }}</td>
                 <td>
                     <ul>
                         {% for lecturer in course.lecturers %}
                         <li>
-                            <a href="/schedule?lecturer={{ lecturer.id }}">
+                            <a href="/schedule-table?lecturer={{ lecturer.id }}">
                                 {{ lecturer.name }}
                             </a>
                         </li>

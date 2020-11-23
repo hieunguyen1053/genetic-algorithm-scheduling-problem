@@ -12,7 +12,7 @@
             {% for lecturer in lecturers %}
             <tr>
                 <td>{{ lecturer.id }}</td>
-                <td><a href="/schedule?lecturer={{ lecturer.id }}">{{ lecturer.name }}</a></td>
+                <td><a href="/schedule-table?lecturer={{ lecturer.id }}">{{ lecturer.name }}</a></td>
             </tr>
             {% endfor %}
         </tbody>

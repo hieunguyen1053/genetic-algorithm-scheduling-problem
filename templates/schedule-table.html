@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block schedule%}
+<li class="nav-item">
+    <a class="nav-link" href="/">Thời khoá biểu chi tiết</a>
+</li>
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='schedule.css')}}" />
+<div class="table-responsive">
+    <table id="ThoiKhoaBieu1_tbTKBTheoTuan" cellspacing="0" cellpadding="10" rules="all" border="1"
+        style="font-family:Tahoma;font-size:14px;width:100%;border-collapse:collapse;">
+        <tbody>
+            <tr class="Headerrow">
+                <td style="width:30px;">Tiết|Thứ</td>
+                <td>Thứ 2</td>
+                <td>Thứ 3</td>
+                <td>Thứ 4</td>
+                <td>Thứ 5</td>
+                <td>Thứ 6</td>
+                <td>Thứ 7</td>
+                <td>Chủ nhật</td>
+            </tr>
+            {% for row in rows %}
+            <tr class="rowContent">
+                <td class="cellbuoi">{{ loop.index }}</td>
+                {% for classes in row %}
+                {% if classes %}
+                {% if classes|length > 1 %}
+                <td class="cell" rowspan="3" style="width:{{ classes|length * 150}}px">
+                    <table cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                {% for class in classes %}
+                                <td style="width:{{ classes|length * 150}}px;color:White;background-color:{{ class.color }};">
+                                    <b>{{ class.course.name }}<br></b>
+                                    <br>{{ class.course.id }} | {{ class.lecturer.name }}
+                                    <br>Phòng: {{ class.room.name }}
+                                </td>
+                                {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                {% else %}
+                <td class="cell" rowspan="3" style="color:White;background-color:{{ classes[0].color }};">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b>{{ classes[0].course.name }}<br></b>
+                                    <br>{{ classes[0].course.id }} | {{ classes[0].lecturer.name }}
+                                    <br>Phòng: {{ classes[0].room.name }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                {% endif %}
+                {% else %}
+                <td class="cell"></td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <table class="table table-striped table-sm mt-5">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Mã môn học</th>
+                <th>Tên môn học môn học</th>
+                <th>Giảng viên</th>
+                <th>Phòng</th>
+                <th>Thời gian</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for class in classes %}
+            <tr>
+                <td>{{ class.id }}</td>
+                <td>{{ class.course.id }}</td>
+                <td>{{ class.course.name }}</td>
+                <td>{{ class.lecturer.name }}</td>
+                <td>{{ class.room.name }}</td>
+                <td>{{ class.time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

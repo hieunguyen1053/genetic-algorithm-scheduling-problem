@@ -9,12 +9,24 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return redirect('/course')
+    return redirect('/schedule')
+
 
 @app.route('/course')
 def course():
     courses = Course.load()
     return render_template('course.html', courses=courses)
+
+
+@app.route('/schedule')
+def schedule():
+    classes = Schedule.load()
+    num_conflict = 0
+    for i in range(len(classes)):
+        classes[i].time = Class.DAYS[classes[i].day] + " " + classes[i].shift.time
+        if classes[i].conflict:
+            num_conflict += 1
+    return render_template('schedule.html', classes=classes, num_conflict=num_conflict)
 
 
 @app.route('/lecturer')
@@ -29,8 +41,8 @@ def room():
     return render_template('room.html', rooms=rooms)
 
 
-@app.route('/schedule')
-def schedule():
+@app.route('/schedule-table')
+def schedule_table():
     classes = Schedule.load()
     if request.args.get("lecturer"):
         arg = request.args.get("lecturer")
@@ -56,10 +68,10 @@ def schedule():
 
             if len(_classes) != 0:
                 if i % 3 == 0:
-                    _class = _classes[0]
-                    _class.color = colors[count]
-                    cols.append(_class)
-                    count += 1
+                    for k in range(len(_classes)):
+                        _classes[k].color = colors[count]
+                        count += 1
+                    cols.append(_classes)
             else:
                 cols.append(None)
         rows.append(cols)
@@ -67,7 +79,7 @@ def schedule():
     for i in range(len(classes)):
         classes[i].time = Class.DAYS[classes[i].day] + \
             " " + classes[i].shift.time
-    return render_template('schedule.html', classes=classes, rows=rows)
+    return render_template('schedule-table.html', classes=classes, rows=rows)
 
 @app.route('/api/process')
 def process():
